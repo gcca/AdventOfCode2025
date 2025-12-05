@@ -14,6 +14,13 @@ std::size_t Day01(const Container &input, std::int64_t start) {
     std::string number_str = it.substr(1);
     std::int64_t number = std::stoi(number_str);
 
+    if (operation_chr == 'R') {
+      start += number;
+    } else if (operation_chr == 'L') {
+      start -= number;
+    }
+    start %= 100;
+
     std::cout << "Operation: " << operation_chr << std::endl;
     std::cout << "Number: " << number << std::endl;
 
